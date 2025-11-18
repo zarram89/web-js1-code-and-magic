@@ -1,3 +1,2 @@
 import './setup.js';
-import './popup.js'
-
+import './user-modal.js';
