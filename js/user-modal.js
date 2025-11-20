@@ -1,6 +1,4 @@
-import {isEnterKey, isEscapeKey} from "./util.js";
-import {renderSimilarList, clearSimilarList} from "./similar-list.js";
-import './user-form.js';
+import {isEnterKey, isEscapeKey} from './util.js';
 
 const userModalElement = document.querySelector('.setup');
 const userModalOpenElement = document.querySelector('.setup-open');
@@ -16,13 +14,11 @@ const onDocumentKeyDown = (evt) => {
 function openUserModal() {
   userModalElement.classList.remove('hidden');
   document.addEventListener('keydown', onDocumentKeyDown);
-  renderSimilarList();
 }
 
 function closeUserModal() {
   userModalElement.classList.add('hidden');
   document.removeEventListener('keydown', onDocumentKeyDown);
-  clearSimilarList();
 }
 
 userModalOpenElement.addEventListener('click', openUserModal);
@@ -40,3 +36,5 @@ userModalCloseElement.addEventListener('keydown', (evt) => {
     closeUserModal();
   }
 })
+
+export {openUserModal, closeUserModal};
